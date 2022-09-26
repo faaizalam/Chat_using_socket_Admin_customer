@@ -1,0 +1,145 @@
+*{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+}
+body{
+  height: 100vh;
+  
+}
+
+#root{
+  height: 100%;
+  
+}
+
+.App{
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+
+}
+
+
+header{
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: black;
+  color: white;
+
+}
+
+  
+main{
+  grid-area: main;
+}
+header{
+  grid-area: header;
+}
+  footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+
+  }
+  li{
+    text-decoration: none;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .but{
+    background-color: blue;
+    height: 50px;
+    border-radius: 10px;
+
+    border: none;
+    width: 100px;
+    cursor: pointer;
+
+  }
+  
+  button:hover{
+  border:  2px solid black;
+
+  }
+  
+  /* .fix{
+    position: fixed;
+  } */
+  
+
+/* .footers {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: yellow;
+    height: 200px;
+    position: relative;
+} */
+/* .clientchat {
+  display: flex;
+  justify-content: end;
+} */
+
+.fix {
+  width: 220px;
+  border: 2px solid gold;
+  /* position: fixed; */
+  display: flex;
+  flex-direction: column;
+}
+ ul{
+  overflow-y: scroll;
+  max-height: 6rem;
+  
+}
+
+.chatbox{
+  position: fixed;
+  right: 1rem;
+  bottom: 5rem;
+  color: black;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+background-color: #203040;
+}
+
+.mainAdmin{
+  display: flex;
+}
+
+.arrow{
+  cursor: pointer;
+}
+.names{
+  height: 500px;
+  width: 400px;
+  background-color: rgb(211, 176, 211);
+}
+input{
+  width: 370px;
+  height: 40px;
+}
+
+input:focus{
+  padding: 10px;
+  background-color: azure;
+}
+button{
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+
+}
