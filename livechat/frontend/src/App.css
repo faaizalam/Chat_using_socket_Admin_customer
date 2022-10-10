@@ -1,0 +1,243 @@
+* {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+body {
+  height: 100vh;
+
+}
+
+#root {
+  height: 100%;
+
+}
+
+.App {
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+
+}
+
+main {
+  grid-area: main;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.but {
+  background-color: blue;
+  height: 50px;
+  border-radius: 10px;
+
+  border: none;
+  width: 100px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  border: 2px solid black;
+}
+.fix {
+  width: 220px;
+  border: 2px solid gold;
+  /* position: fixed; */
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  overflow-y: scroll;
+  max-height: 6rem;
+
+}
+
+.chatbox {
+  position: fixed;
+  right: 1rem;
+  bottom: 5rem;
+  color: black;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #203040;
+}
+
+.mainAdmin {
+  display: flex;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.names {
+  height: 500px;
+  width: 400px;
+  background-color: rgb(211, 176, 211);
+}
+
+input {
+  width: 370px;
+  height: 40px;
+}
+
+input:focus {
+  padding: 10px;
+  background-color: azure;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+
+}
+
+.col1 {
+  display: flex;
+
+  border: 2px solid black;
+  height: 450px;
+  margin-right: 1px;
+
+  background-color: rgb(192, 183, 183);
+}
+
+
+
+.chatfoot {
+  height: 100px;
+  background-color: black;
+  border-radius: 10px;
+
+}
+
+.colfoot form {
+  display: flex;
+  flex-direction: row;
+
+  float: right;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.colfoot form textarea {
+  width: 600px;
+  margin: 10px;
+
+}
+
+.row1:nth-child(2) {
+  width: 100px;
+
+}
+
+.col2 {
+  width: 800px;
+  max-height: 450px;
+  /* overflow: scroll; */
+  overflow-y: scroll;
+
+
+  background-color: rgb(228, 221, 194);
+}
+
+.col1,
+.col2 {
+  border-radius: 10px;
+
+}
+
+.as {
+  text-decoration: none;
+  list-style: none;
+  margin-right: 15px;
+}
+
+.loginform {
+
+  width: 500px;
+}
+
+.logcon {
+  display: flex;
+  justify-content: center;
+}
+
+.small {
+  margin-top: 10px;
+}
+
+.mainchat1 {
+  padding: 0px;
+  margin: 0;
+  background-color: rgb(228, 221, 194);
+}
+
+.mainchat2 {
+  padding: 0px;
+  margin: 0;
+  background-color: whitesmoke;
+  height: 00px;
+}
+
+.user {
+  margin: 20px;
+  border-bottom: 2px whitesmoke;
+  cursor: pointer;
+}
+
+.Activeuser {
+
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+
+}
+
+.none {
+
+  display: flex;
+
+  padding: 10px;
+
+}
+
+.msgnon {
+  color: red;
+
+}
+
+.idmsg {
+  color: orangered;
+
+}

@@ -1,0 +1,91 @@
+UserRouter.post('/:id/m',expressAsyncHandler(async(req,res)=>{
+  //  let id=req.params.id
+  
+  const newcon=await UserChat.findById(req.params.id)
+  console.log(newcon)
+  const insidemsg=req.body.messages.find((x)=>x.to)
+  const reciver=await UserChat.findById(insidemsg.to)
+if ( reciver && newcon ) {
+  //   console.log(reciver)
+        if (newcon && reciver && newcon.conversations.length>0&& reciver.conversations.length>0) {
+    
+      const insidemsg=req.body.messages.find((x)=>x.from)
+      const ava=newcon.conversations.find((x)=>x.messages.find((x)=>x.from===insidemsg.from&&x.to===insidemsg.to))
+      const a1=newcon.conversations.find((x)=>x.messages.find((x)=>x.from===insidemsg.to&&x.to===insidemsg.from))
+      
+      console.log(ava)
+
+      const insidemsgrec=req.body.messages.find((x)=>x.to)
+      const reccheck=reciver.conversations.find((x)=>x.messages.find((x)=>x.to===insidemsgrec.to&&x.from===insidemsgrec.from))
+      const a2=reciver.conversations.find((x)=>x.messages.find((x)=>x.to===insidemsg.from&&x.from===insidemsg.to))
+      console.log(a1,a2)
+      if((ava && reccheck)){
+
+        // console.log(finalstate)
+        ava.messages.push(insidemsg)
+        const respsavepush= await newcon.save()
+      
+
+        reccheck.messages.push(insidemsgrec)
+        const reciverpush= await reciver.save()
+        res.send({messgae:"in old msgs push save",reciverpush,respsavepush})
+        
+      }else if(a1&&a2){
+        a1.messages.push(insidemsg)
+        const respsavepush= await newcon.save()
+      
+
+        a2.messages.push(insidemsgrec)
+        const reciverpush= await reciver.save()
+        res.send({messgae:"in old msgs push save",reciverpush,respsavepush})
+
+      }else{
+        const  infosender ={
+          messages:req.body.messages
+        
+         }
+         const savenew= newcon.conversations.push(infosender)
+         const sendnew=await newcon.save()
+        //  res.send({message:"new msgs save",sendnew})
+        //  re
+           const  inforeciver ={
+          messages:req.body.messages
+        
+         }
+         const savereciver= reciver.conversations.push(inforeciver)
+         const reciverstate=await reciver.save()
+         res.send({message:"new msgs save",reciverstate,sendnew})
+}
+    }else{
+    
+     const  infosender ={
+    messages:req.body.messages
+  
+   }
+   const savenew= newcon.conversations.push(infosender)
+   const sendnew=await newcon.save()
+  //  res.send({message:"new msgs save",sendnew})
+  //  re
+     const  inforeciver ={
+    messages:req.body.messages
+  
+   }
+   const savereciver= reciver.conversations.push(inforeciver)
+   const reciverstate=await reciver.save()
+   res.send({message:"new msgs save",reciverstate,sendnew})
+   }
+
+  }else{
+   
+
+    res.status(404).send({message:"no user found"})
+
+
+  }
+  
+
+ 
+
+
+  
+}))
